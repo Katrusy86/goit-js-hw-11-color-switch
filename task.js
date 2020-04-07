@@ -18,7 +18,7 @@ const colors = [
     idInterval = setInterval(() => {
     const randomIntegerFromInterval= (min,max) => Math.floor(Math.random()*(max - min + 1) + min);
     document.body.style.backgroundColor= colors[randomIntegerFromInterval(0,colors.length-1)];
-  },500)
+  },1000)
 }
   refs.stopBtn.addEventListener('click', stopBg)
   
