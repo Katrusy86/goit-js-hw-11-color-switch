@@ -15,14 +15,17 @@ const colors = [
 
   let idInterval = null;
   function setBg() {
-    idInterval = setInterval(() => {
-    const randomIntegerFromInterval= (min,max) => Math.floor(Math.random()*(max - min + 1) + min);
-    document.body.style.backgroundColor= colors[randomIntegerFromInterval(0,colors.length-1)];
-  },1000)
-}
+    if(!idInterval){
+      idInterval = setInterval(() => {
+      const randomIntegerFromInterval= (min,max) => Math.floor(Math.random()*(max - min + 1) + min);
+      document.body.style.backgroundColor= colors[randomIntegerFromInterval(0,colors.length-1)];
+      },1000)
+    }
+  }
   refs.stopBtn.addEventListener('click', stopBg)
   
   function stopBg(){
     clearInterval(idInterval);
+    idInterval = null;
     }
 
